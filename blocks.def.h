@@ -15,7 +15,7 @@ static const Block blocks[] = {
 
     {"mail ",       "mail_check ",    10,    0 },
 
-    {"vol ",        "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1 ",    1,    0 },
+    {"vol ",        "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1 ",    0,    10 },
 
 	{"",            "date '+%a %d %b %H:%M']",    10,    0 },
 
