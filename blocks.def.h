@@ -5,11 +5,11 @@ static const Block blocks[] = {
 
     {"  [cpu ",     "top -bn 1 | awk '/^%Cpu/ {print int($2 + $4 + $6)\"%\"}' ",    1,    0 },
 
-    {"temp ",       "sensors | awk '/^Package/ { print $4+0\"°C\" }' ",    1,    0 },
+    {"temp ",       "sensors | awk '/^Package/ { print $4+0\"°\" }' ",    1,    0 },
 
     {"load ",       "cat /proc/loadavg | awk '{print $1, $2, $3}' ",    1,    0 },
 
-    {"mem ",        "free -h | awk '/^Mem/ { print $3\" / \"$2 }' | sed s/i//g ",    5,	   0 },
+    {"mem ",        "free -h | awk '/^Mem/ { print $3 }' | sed s/i//g ",    5,	   0 },
 
     {"upd ",        "checkupdates | wc -l ",    10,    0 },
 
@@ -22,5 +22,5 @@ static const Block blocks[] = {
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
-static char delim[] = "] [";
+static char delim[] = "]  [";
 static unsigned int delimLen = 5;
