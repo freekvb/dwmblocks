@@ -3,6 +3,7 @@ static const Block blocks[] = {
 
     /*Icon*/	    /*Command*/		/*Update Interval*/	    /*Update Signal*/
 
+
     {"  [cpu ",     "top -bn 1 | awk '/^%Cpu/ {print int($2 + $4 + $6)\"%\"}' ",    1,    0 },
 
     {"temp ",       "sensors | awk '/^Package/ { print $4+0\"°\" }' ",    1,    0 },
