@@ -12,9 +12,9 @@ static const Block blocks[] = {
 
     {"mem ",        "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g ",    5,	   0 },
 
-    {"root ",       "df -h | awk '/^/dev/sda3/ { print $5 } ' ",   60,    0 },
+    {"root ",       "df -h | awk 'NR == 4 { print $5 } ' ",   60,    0 },
 
-    {"home ",       "df -h | awk '/^/dev/sda4/ { print $5 } ' ",   60,    0 },
+    {"home ",       "df -h | awk 'NR == 8 { print $5 } ' ",   60,    0 },
 
     {"upd ",        "checkupdates | wc -l ",    10,    0 },
 
