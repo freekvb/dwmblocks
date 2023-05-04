@@ -22,7 +22,7 @@ static const Block blocks[] = {
 
     {"vol ",        "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1 ",    1,    0 },
 
-    {"",            "date '+%a %d %b %Y  %H:%M ' ",    10,    0 },
+    {" ",            "date '+%a %d %b %Y  %H:%M ' ",    10,    0 },
 
 };
 
